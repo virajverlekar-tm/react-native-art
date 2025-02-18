@@ -85,7 +85,7 @@ public class ARTRenderableViewManager extends ViewManager<View, ReactShadowNode>
 
   @Override
   public void prepareToRecycleView(ThemedReactContext reactContext, View view) {
-      // Add your implementation here
-      return view;
+      // Implement any necessary logic to prepare the view for recycling.
+      // This can be left empty if no specific logic is needed.
   }
 }
