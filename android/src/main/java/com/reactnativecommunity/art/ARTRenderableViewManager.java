@@ -20,6 +20,7 @@ import com.facebook.react.uimanager.ViewManager;
  */
 public class ARTRenderableViewManager extends ViewManager<View, ReactShadowNode> {
 
+
   public static final String CLASS_GROUP = "ARTGroup";
   public static final String CLASS_SHAPE = "ARTShape";
   public static final String CLASS_TEXT = "ARTText";
@@ -84,8 +85,9 @@ public class ARTRenderableViewManager extends ViewManager<View, ReactShadowNode>
   }
 
   @Override
-  public void prepareToRecycleView(ThemedReactContext reactContext, View view) {
+  public View prepareToRecycleView(ThemedReactContext reactContext, View view) {
       // Implement any necessary logic to prepare the view for recycling.
-      // This can be left empty if no specific logic is needed.
+      // You can return the view as is, or modify it as needed.
+      return view; // Return the view instance
   }
 }
