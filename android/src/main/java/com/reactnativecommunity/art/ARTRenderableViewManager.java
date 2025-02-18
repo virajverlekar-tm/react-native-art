@@ -82,4 +82,16 @@ public class ARTRenderableViewManager extends ViewManager<View, ReactShadowNode>
   public void updateExtraData(View root, Object extraData) {
     throw new IllegalStateException("ARTShape does not map into a native view");
   }
+
+  @Override
+  public void prepareToRecycleView(ThemedReactContext reactContext, View view) {
+    // ART views do not map directly to native views, so no cleanup is necessary here.
+    // If you had any resources or references that needed to be cleaned up, it would go here.
+    // For now, we leave this empty as ART views don't require manual cleanup.
+
+    // Example of potential resource cleanup:
+    // if (view instanceof ARTGroup) {
+    //    ((ARTGroup) view).cleanup();
+    // }
+  }
 }
