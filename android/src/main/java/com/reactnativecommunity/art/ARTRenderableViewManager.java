@@ -85,13 +85,14 @@ public class ARTRenderableViewManager extends ViewManager<View, ReactShadowNode>
 
   @Override
   public void prepareToRecycleView(ThemedReactContext reactContext, View view) {
-    // ART views do not map directly to native views, so no cleanup is necessary here.
-    // If you had any resources or references that needed to be cleaned up, it would go here.
-    // For now, we leave this empty as ART views don't require manual cleanup.
+    // Since ART views do not map directly to native views, this method doesn't need to do much
+    // In case of resources that need to be cleaned, they can be handled here.
 
-    // Example of potential resource cleanup:
-    // if (view instanceof ARTGroup) {
-    //    ((ARTGroup) view).cleanup();
-    // }
+    // Example cleanup logic (if required):
+    if (view instanceof ARTGroup) {
+      ARTGroup artGroup = (ARTGroup) view;
+      // Perform cleanup here if needed
+      artGroup.cleanup();
+    }
   }
 }
